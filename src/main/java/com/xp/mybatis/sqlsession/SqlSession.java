@@ -15,7 +15,6 @@ public interface SqlSession {
      * @return
      */
     <T> T getMapper(Class<T> daoInterfaceClass);
-
     /**
      * 释放资源
      */
