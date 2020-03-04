@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--mybatis的主配置文件-->
+<configuration>
+    <!--别名-->
+    <typeAliases>
+        <typeAlias type="com.xp.pojo.Blog" alias="Blog"/>
+    </typeAliases>
+
+    <!--配置环境-->
+    <environments default="mysql">
+        <!--配置mysql环境-->
+        <environment id="mysql">
+            <!--配置事务的类型-->
+            <transactionManager type="JDBC"/>
+            <!--配置数据源(连接池)-->
+            <dataSource type="POOLED">
+                <!--配置连接数据库的4个基本信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/love"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--指定映射配置文件的位置,映射配置文件指的是每个dao独立的配置文件-->
+    <mappers>
+        <!-- 配置文件 -->
+<!--        <mapper resource="com/xp/dao/BlogDao.xml"/>-->
+        <!-- 注解 -->
+        <mapper class="com.xp.dao.BlogDao"/>
+    </mappers>
+</configuration>
